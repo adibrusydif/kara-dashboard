@@ -1,5 +1,11 @@
 import React from 'react'
 
+//Real Dashboard
+const User = React.lazy(() => import('./screen/user/user'))
+const CreateUser = React.lazy(() => import('./screen/user/createUser'))
+
+
+
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -52,6 +58,8 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  { path: '/user', name: 'User', element: User },
+  { path: '/user/createuser', name: 'Create User', element: CreateUser },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },

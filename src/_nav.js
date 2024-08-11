@@ -12,10 +12,38 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
+  cilUser
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
+  {
+    component: CNavTitle,
+    name: 'Kara Akademi',
+  },
+  {
+    component: CNavItem,
+    name: 'Student',
+    to: '/user',
+    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavGroup,
+    name: 'Student',
+    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'List Student',
+        to: '/user',
+      },
+      {
+        component: CNavItem,
+        name: 'Add Student',
+        to: '/user/createuser',
+      }
+    ],
+  },
   {
     component: CNavItem,
     name: 'Dashboard',
